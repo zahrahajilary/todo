@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html lang="en"><style type="text/css" id="night-mode-pro-style"></style><link type="text/css" rel="stylesheet" id="night-mode-pro-link"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"> <meta name="description" content=""> <meta name="author" content=""> <title>My Todo</title> <link rel="shortcut icon" href="http://localhost:8080/icon.ico"><link as="script" href="./My Todo_files/main.d77542cc2db9052f9b98.js.download" rel="preload"><link as="script" href="./My Todo_files/runtime.d77542cc2db9052f9b98.js.download" rel="preload"><link as="script" href="./My Todo_files/vendor.d77542cc2db9052f9b98.js.download" rel="preload"><style type="text/css">/* roboto-regular - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url(src/scss/fonts/roboto-v18-latin-regular.eot); /* IE9 Compat Modes */
+    src: local('Roboto'), local('Roboto-Regular'),
+         url(src/scss/fonts/roboto-v18-latin-regular.eot?#iefix) format('embedded-opentype'), 
+         url(src/scss/fonts/roboto-v18-latin-regular.woff2) format('woff2'), 
+         url(src/scss/fonts/roboto-v18-latin-regular.woff) format('woff'), 
+         url(src/scss/fonts/roboto-v18-latin-regular.ttf) format('truetype'), 
+         url(data:image/svg+xml;base64,bW9kdWxlLmV4cG9ydHMgPSBfX3dlYnBhY2tfcHVibGljX3BhdGhfXyArICJzcmMvc2Nzcy9mb250cy9yb2JvdG8tdjE4LWxhdGluLXJlZ3VsYXIuc3ZnIjs=#Roboto) format('svg'); /* Legacy iOS */
+  }
+  /* roboto-500 - latin */
+  @font-face {
+    font-family: 'Roboto-bold';
+    font-style: normal;
+    font-weight: 500;
+    src: url(src/scss/fonts/roboto-v18-latin-500.eot); /* IE9 Compat Modes */
+    src: local('Roboto Medium'), local('Roboto-Medium'),
+         url(src/scss/fonts/roboto-v18-latin-500.eot?#iefix) format('embedded-opentype'), 
+         url(src/scss/fonts/roboto-v18-latin-500.woff2) format('woff2'), 
+         url(src/scss/fonts/roboto-v18-latin-500.woff) format('woff'), 
+         url(src/scss/fonts/roboto-v18-latin-500.ttf) format('truetype'), 
+         url(data:image/svg+xml;base64,bW9kdWxlLmV4cG9ydHMgPSBfX3dlYnBhY2tfcHVibGljX3BhdGhfXyArICJzcmMvc2Nzcy9mb250cy9yb2JvdG8tdjE4LWxhdGluLTUwMC5zdmciOw==#Roboto) format('svg'); /* Legacy iOS */
+  }</style><style type="text/css">.blocker{position:fixed;top:0;right:0;bottom:0;left:0;width:100%;height:100%;overflow:auto;z-index:1;padding:20px;box-sizing:border-box;background-color:#000;background-color:rgba(0,0,0,0.75);text-align:center}.blocker:before{content:"";display:inline-block;height:100%;vertical-align:middle;margin-right:-0.05em}.blocker.behind{background-color:transparent}.modal{display:none;vertical-align:middle;position:relative;z-index:2;max-width:500px;box-sizing:border-box;width:90%;background:#fff;padding:15px 30px;-webkit-border-radius:8px;-moz-border-radius:8px;-o-border-radius:8px;-ms-border-radius:8px;border-radius:8px;-webkit-box-shadow:0 0 10px #000;-moz-box-shadow:0 0 10px #000;-o-box-shadow:0 0 10px #000;-ms-box-shadow:0 0 10px #000;box-shadow:0 0 10px #000;text-align:left}.modal a.close-modal{position:absolute;top:-12.5px;right:-12.5px;display:block;width:30px;height:30px;text-indent:-9999px;background-size:contain;background-repeat:no-repeat;background-position:center center;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==')}.modal-spinner{display:none;position:fixed;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);padding:12px 16px;border-radius:5px;background-color:#111;height:20px}.modal-spinner>div{border-radius:100px;background-color:#fff;height:20px;width:2px;margin:0 1px;display:inline-block;-webkit-animation:sk-stretchdelay 1.2s infinite ease-in-out;animation:sk-stretchdelay 1.2s infinite ease-in-out}.modal-spinner .rect2{-webkit-animation-delay:-1.1s;animation-delay:-1.1s}.modal-spinner .rect3{-webkit-animation-delay:-1.0s;animation-delay:-1.0s}.modal-spinner .rect4{-webkit-animation-delay:-0.9s;animation-delay:-0.9s}@-webkit-keyframes sk-stretchdelay{0%,40%,100%{-webkit-transform:scaleY(0.5)}20%{-webkit-transform:scaleY(1.0)}}@keyframes sk-stretchdelay{0%,40%,100%{transform:scaleY(0.5);-webkit-transform:scaleY(0.5)}20%{transform:scaleY(1.0);-webkit-transform:scaleY(1.0)}}</style><style type="text/css">html,
+body {
+  padding: 0;
+  margin: 0; }
+
+textarea {
+  background-color: #fff;
+  border: none;
+  border-radius: 1pt;
+  min-height: 20pt;
+  min-width: 200pt;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 5pt 0; }
+  @media screen and (max-width: 420px) {
+    textarea {
+      min-width: 170pt; } }
+  @media screen and (max-width: 320px) and (min-width: 0) {
+    textarea {
+      min-width: 140pt;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      width: 140pt; } }
+
+input[type="text"] {
+  background-color: #fff;
+  border: none;
+  border-radius: 1pt;
+  min-height: 20pt;
+  min-width: 200pt;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 5pt 0;
+  overflow: hidden; }
+  @media screen and (max-width: 420px) {
+    input[type="text"] {
+      min-width: 170pt; } }
+  @media screen and (max-width: 320px) and (min-width: 0) {
+    input[type="text"] {
+      min-width: 140pt;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto; } }
+
+.container {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .container .search_box {
+    background-color: #fff;
+    width: 100%;
+    margin-top: 50pt;
+    position: fixed;
+    max-height: 30pt;
+    height: 30pt;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid gray; }
+  .container ul {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 85pt;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 300pt; }
+    .container ul li {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      list-style: none;
+      padding: 7pt;
+      margin: 10pt 15pt;
+      border-radius: 1pt;
+      max-width: 300pt; }
+      .container ul li .item-header {
+        min-height: 20pt; }
+        .container ul li .item-header .title {
+          float: left;
+          margin: 0;
+          min-height: 20pt; }
+        .container ul li .item-header .date {
+          float: right; }
+      .container ul li .panel-body {
+        text-align: justify; }
+        .container ul li .panel-body .content {
+          min-height: 50pt;
+          margin: 5pt 0 10pt 0; }
+        .container ul li .panel-body .btn {
+          float: right;
+          margin-right: 2pt; }
+      .container ul li:hover {
+        background-color: whitesmoke; }
+  .container .fab {
+    position: fixed;
+    right: 15pt;
+    bottom: 10pt;
+    padding: 8pt;
+    width: 25pt;
+    height: 25pt;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    vertical-align: -webkit-baseline-middle;
+    background-color: #b00020;
+    color: #fff;
+    font-size: 18pt;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 50%;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1; }
+    .container .fab:hover {
+      background-color: #ca0025;
+      cursor: pointer; }
+
+.container .app_title {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  max-height: 97pt;
+  height: 50pt;
+  color: #fff;
+  background-color: #b00020; }
+  .container .app_title h4 {
+    margin-left: 10pt;
+    font-family: "Roboto"; }
+
+.container .todo_list {
+  width: 100%; }
+
+.btn {
+  text-decoration: none;
+  padding: 3pt 6pt;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer; }
+
+.btn-primary {
+  background-color: #b00020;
+  color: #fff; }
+  .btn-primary:hover {
+    background-color: #ca0025; }
+
+.btn-secondary {
+  background-color: #000;
+  color: #fff; }
+  .btn-secondary:hover {
+    background-color: #4b4b4b; }
+
+.create-item {
+  text-align: center; }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30pt;
+  height: 15pt; }
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 10pt;
+  width: 10pt;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+input:checked + .slider {
+  background-color: #b00020; }
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #b00020; }
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px); }
+</style></head> <body> <div class="container"> <section class="app_title"><h4>Todo List</h4></section> <section class="search_box"> <input type="text" placeholder="Search ..."> <a href="http://localhost:8080/">click</a> </section> <section class="todo_list"> <ul id="renderListTodo"><li><div class="item-header"><h4 class="title">heey1</h4><input class="" style="display: none;"></input></div><div class="panel-body"><p class="content">tooiq</p><textarea class="" style="display: none;"></textarea><hr class=""></hr><label class="switch"><input class="status" type="checkbox">false</input><span class="slider"></span></label><a class="btn btn-primary">Delete</a><a class="btn btn-secondary">Edit</a></div></li><li><div class="item-header"><h4 class="title">heeey</h4><input class="" style="display: none;"></input></div><div class="panel-body"><p class="content">how are you</p><textarea class="" style="display: none;"></textarea><hr class=""></hr><label class="switch"><input class="status" type="checkbox">false</input><span class="slider"></span></label><a class="btn btn-primary">Delete</a><a class="btn btn-secondary">Edit</a></div></li><li><div class="item-header"><h4 class="title">شام</h4><input class="" style="display: none;"></input></div><div class="panel-body"><p class="content">خوشکزه بود</p><textarea class="" style="display: none;"></textarea><hr class=""></hr><label class="switch"><input class="status" type="checkbox">false</input><span class="slider"></span></label><a class="btn btn-primary">Delete</a><a class="btn btn-secondary">Edit</a></div></li></ul> </section> <a class="fab" rel="modal:open" href="http://localhost:8080/#ex1">+</a> </div> <div id="ex1" class="modal"> <div class="create-item"> <input type="text" id="addTodo_title" placeholder="Title..." class=""> <br> <textarea name="" id="addTodo_content" cols="30" rows="10" placeholder="Description..."></textarea> </div> <div class="create-item"> <a href="http://localhost:8080/#" id="addTodo" class="btn btn-secondary">Add Note</a> <a href="http://localhost:8080/#" rel="modal:close" class="btn btn-primary">Cancel</a> </div> </div> <script src="./My Todo_files/runtime.d77542cc2db9052f9b98.js.download"></script><script src="./My Todo_files/vendor.d77542cc2db9052f9b98.js.download"></script><script src="./My Todo_files/main.d77542cc2db9052f9b98.js.download"></script>  </body></html>

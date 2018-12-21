@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>My Todo</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <section class="app_title"><h4>Todo List</h4></section>
+     <section class="search_box">
+       <h5>Total: <span id="totoal"></span></h5> <h5>Incomplete: <span id="unCompleted"> 50 </span></h5>
+     </section>
+      <section class="todo_list">
+        <ul id="renderListTodo"></ul>
+      </section>
+      <a class="fab" rel="modal:open" href="#ex1">+</a>
+    </div>
+    <div id="ex1" class="modal">
+      <div class="create-item">
+        <input type="text" id="addTodo_title" placeholder="Title..." class="">
+        <br>
+        <textarea name="" id="addTodo_content"  cols="30" rows="10" placeholder="Description..."></textarea>
+      </div>
+      <div class="create-item">
+        <a href="#" id="addTodo" class="btn btn-secondary" rel="modal:close">Add Note</a>
+      <a href="#" rel="modal:close" class="btn btn-primary">Cancel</a>
+      </div>
+      
+    </div>
+    
+  </body>
+</html>

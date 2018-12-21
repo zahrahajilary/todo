@@ -1,0 +1,252 @@
+@import "./fonts.css";
+@import './jquery.modal.min.css';
+
+$accent: #b00020;
+$primary: #fff;
+$secondary: #000;
+$gray: #3e3e3e;
+$borderItem: 1px solid gray;
+$shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+$break-small: 420px;
+$break-large: 1200px;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto' !important
+}
+textarea {
+  background-color: $primary;
+  border: none;
+  border-radius: 1pt;
+  min-height: 20pt;
+  min-width: 200pt;
+  box-shadow: $shadow;
+  margin:5pt 0;  
+  @media screen and (max-width: $break-small) {
+    min-width: 170pt;
+  }
+  @media screen and (max-width: 320px) and (min-width:0) {
+    min-width: 140pt;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    width: 140pt
+  }
+  
+}
+input[type="text"] {
+  background-color: $primary;
+  border: none;
+  border-radius: 1pt;
+  min-height: 20pt;
+  min-width: 200pt;
+  box-shadow: $shadow;
+  margin:5pt 0;
+  overflow: hidden;
+  @media screen and (max-width: $break-small) {
+    min-width: 170pt;
+  }
+  @media screen and (max-width: 320px) and (min-width:0) {
+    min-width: 140pt;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto
+  }
+  
+  
+}
+.container {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  .search_box {
+    z-index:10;
+    background-color: $secondary;
+    font-family: 'Roboto';
+    color:$primary;
+    width: 100%;
+    margin-top: 50pt;
+    position: fixed;
+    max-height: 30pt;
+    height: 30pt;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: $borderItem;
+   
+  }
+  ul {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 85pt;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 300pt;
+    li {
+      box-shadow: $shadow;
+      list-style: none;
+      padding: 7pt;
+      margin: 10pt 15pt;
+      border-radius: 1pt;
+      max-width: 300pt;
+      .item-header {
+        min-height: 20pt;
+        .title {
+          float: left;
+          margin: 0;
+          min-height: 20pt;
+        }
+        .date {
+          float: right;
+        }
+      }
+      .panel-body {
+        // display: none;
+        text-align: justify;
+        .content {
+          min-height: 50pt;
+          margin: 5pt 0 10pt 0;
+        }
+        .status {
+        }
+        .btn {
+          float: right;
+          margin-right: 2pt;
+        }
+      }
+      &:hover {
+        background-color: whitesmoke;
+      }
+    }
+  }
+  .fab {
+    position: fixed;
+    right: 15pt;
+    bottom: 10pt;
+    padding: 8pt;
+    width: 25pt;
+    height: 25pt;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    vertical-align: -webkit-baseline-middle;
+    background-color: $accent;
+    color: $primary;
+    font-size: 18pt;
+    font-weight: bold;
+    box-shadow: $shadow;
+    border-radius: 50%;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    &:hover {
+      background-color: lighten($accent, 5%);
+      cursor: pointer;
+    }
+  }
+}
+
+.container .app_title {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  max-height: 97pt;
+  z-index:10;
+  height: 50pt;
+  color: $primary;
+  background-color: $accent;
+  h4 {
+    margin-left: 10pt;
+    font-family: "Roboto";
+  }
+}
+.container .todo_list {
+  width: 100%;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 3pt 6pt;
+  box-shadow: $shadow;
+  cursor: pointer;
+}
+.btn-primary {
+  background-color: $accent;
+  color: $primary;
+  &:hover {
+    background-color: lighten($accent, 5%);
+  }
+}
+.btn-secondary {
+  background-color: $secondary;
+  color: $primary;
+  &:hover {
+    background-color: lighten($gray, 5%);
+  }
+}
+.create-item{
+  text-align: center
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30pt;
+  height: 15pt;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s !important;
+  transition: .4s !important;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 10pt;
+  width: 10pt;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s !important;
+  transition: .4s !important;
+}
+input:checked + .slider {
+  background-color: $accent;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px $accent;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
